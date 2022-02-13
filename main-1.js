@@ -1,2 +1,0 @@
-var devtools=function(){};devtools.toString=function(){return window.location.replace("about:blank"),"-"},setInterval(()=>{console.profile(devtools),console.profileEnd(devtools)},1e3);
-$(document).on({"contextmenu":function(e){console.log("ctx menu button:",e.which);e.preventDefault()},"mousedown":function(e){console.log("normal mouse down:",e.which)},"mouseup":function(e){console.log("normal mouse up:",e.which)}})
