@@ -11,7 +11,7 @@
     <script>
       (async () => {
 	let url = window.location.href;
-        let txt = url.substring(52, 999999);
+        let txt = url.substring(32, 999999);
         const response = await fetch('https://api.github.com/repos/kimbaorrr/cdn/contents/' + txt);
         const data = await response.json();
         let htmlString = '<div class="container-fluid"><ul class="list-group">';
