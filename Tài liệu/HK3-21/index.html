@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>CDN</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/js/bootstrap.bundle.min.js"></script>
+    </head>
+  <body>
+    <script>
+      (async () => {
+	  let url = window.location.href;
+        let txt = txt.substring(52, 999999)
+        const response = await fetch('https://api.github.com/repos/kimbaorrr/cdn/contents/' + txt);
+        const data = await response.json();
+        let htmlString = '<div class="container"><ul class="list-group">';
+        for (let file of data) {
+          htmlString += `<li class="list-group-item"><a href="${file.path}">${file.name}</a></li>`;
+        }
+
+        htmlString += '</ul></div>';
+        document.getElementsByTagName('body')[0].innerHTML = htmlString;
+      })()
+    </script>
+  <body>
+</html>
